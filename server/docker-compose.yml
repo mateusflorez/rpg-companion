@@ -5,12 +5,14 @@ services:
     image: postgres
     container_name: rpg
     restart: always
-    ports: -'5432:5432'
+    ports:
+      - '5432:5432'
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=rpg
-    volumes: -'pgdata:/data/postgres'
+    volumes:
+      - 'pgdata:/data/postgres'
 
 volumes:
   pgdata:
