@@ -1,12 +1,13 @@
 {
   "name": "ttrpg-companion",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Application that manages and generates Table RPG resources",
+  "main": "src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "tsnd --exit-child src/server.ts"
   },
-  "author": "",
+  "author": "Mateus Flores",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
