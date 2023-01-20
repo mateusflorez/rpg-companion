@@ -14,6 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Static page="dashboard" />} />
         <Route path="/characters" element={<Static page="characters" />} />
+        <Route path="/character-builder" element={<Static page="characterBuilder" />} />
       </Routes>
     </BrowserRouter>
   )

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import Header from "../components/Header"
-import Characters from "./Characters"
+import CharacterBuilder from "./characters/CharacterBuilder"
+import Characters from "./characters/Characters"
 import Dashboard from "./Dashboard"
 
 function Static({ page }: { page: String }) {
@@ -13,15 +14,16 @@ function Static({ page }: { page: String }) {
         setPageSelected(page)
     }, [location, page])
 
-    const handlePageChange = (page: String) => {
-
-    }
-
     return (
-        <div className="h-screen w-full overflow-auto bg-dark flex flex-col items-center">
+        <div className="h-screen w-full bg-dark flex flex-col items-center">
             <Header currentPage={pageSelected} />
-            {page === "dashboard" && <Dashboard />}
-            {page === "characters" && <Characters />}
+
+            <div className="w-[99%] flex flex-col items-center overflow-auto scrollbar">
+                {page === "dashboard" && <Dashboard />}
+                {page === "characters" && <Characters />}
+                {page === "characterBuilder" && <CharacterBuilder />}
+            </div>
+
         </div>
     )
 }
