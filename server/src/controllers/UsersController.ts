@@ -1,9 +1,39 @@
-import { Request, Response } from "express"
+import { NextFunction, Request, Response } from "express"
 import { PrismaClient } from "@prisma/client"
 import bcrypt from 'bcrypt'
 
 const prisma = new PrismaClient()
 
-class UsersController { }
+class UsersController {
+    async register(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { username, email, password } = req.body
+            const usernameCheck = await prisma.user.findUnique({ where: { username } })
+            if (usernameCheck)
+                return res.json({ message: "Username already used", status: false })
+            const emailCheck = await prisma.user.findUnique({ where: { email } })
+            if (emailCheck)
+                return res.json({ message: "Email already used", status: false })
+            const hashedPassword = await bcrypt.hash(password, 10)
+            const user = await prisma.user.create({
+                data: {
+                    username,
+                    email,
+                    password: hashedPassword
+                }
+            })
+            return res.status(201).json({
+                status: true,
+                user: {
+                    id: user.id,
+                    username: user.username,
+                    email: user.email
+                }
+            })
+        } catch (err) {
+            next(err)
+        }
+    }
+}
 
 export { UsersController }
