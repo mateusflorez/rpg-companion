@@ -1,7 +1,10 @@
+import Header from "../components/Header"
 
 function Dashboard() {
     return (
-        <div>Dashboard</div>
+        <div className="h-screen w-full overflow-auto bg-dark">
+            <Header />
+        </div>
     )
 }
 
