@@ -1,9 +1,9 @@
-import Header from "../components/Header"
+
 
 function Dashboard() {
     return (
-        <div className="h-screen w-full overflow-auto bg-dark">
-            <Header />
+        <div className="py-12 flex flex-col content-center w-5/6" >
+            <textarea className="bg-zinc-600 rounded resize-none" name="history" id="history" disabled={true} rows={10}></textarea>
         </div>
     )
 }
