@@ -34,6 +34,28 @@ class UsersController {
             next(err)
         }
     }
+
+    async login(req: Request, res: Response, next: NextFunction) {
+        try {
+            const { username, password } = req.body
+            const user = await prisma.user.findUnique({ where: { username } })
+            if (!user)
+                return res.json({ message: "Incorrect username or password", status: false })
+            const passwordCheck = await bcrypt.compare(password, user.password)
+            if (!passwordCheck)
+                return res.json({ message: "Incorrect username or password", status: false })
+            return res.status(201).json({
+                status: true,
+                user: {
+                    id: user.id,
+                    username: user.username,
+                    email: user.email
+                }
+            })
+        } catch (err) {
+            next(err)
+        }
+    }
 }
 
 export { UsersController }
