@@ -4,7 +4,15 @@ module.exports = {
     './src/**/*.tsx'
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Inter', 'sans-serif']
+    },
+    extend: {
+      colors: {
+        dark: '#121214',
+        cloudy: '#2A2634'
+      }
+    },
   },
   plugins: [],
 }
