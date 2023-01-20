@@ -44,7 +44,7 @@ class UsersController {
             const passwordCheck = await bcrypt.compare(password, user.password)
             if (!passwordCheck)
                 return res.json({ message: "Incorrect username or password", status: false })
-            return res.status(201).json({
+            return res.status(200).json({
                 status: true,
                 user: {
                     id: user.id,

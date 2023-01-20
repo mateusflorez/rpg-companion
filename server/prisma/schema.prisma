@@ -22,7 +22,7 @@ model character {
   userId            String
   name              String
   race              String
-  class             String
+  charClass         String   @map("character_class")
   level             Int
   experience        Int
   alignment         String
