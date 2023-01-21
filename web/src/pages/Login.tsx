@@ -69,8 +69,8 @@ function Login() {
                         <img src={Logo} className='h-20' />
                         <h1 className="text-white font-bold text-4xl">TTRPG Companion</h1>
                     </div>
-                    <input type="text" placeholder="Username" name="username" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-12 focus:outline-none focus:bg-zinc-600 transition" onChange={e => handleChange(e)} />
-                    <input type="password" placeholder="Password" name="password" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-12 focus:outline-none focus:bg-zinc-600 transition" onChange={e => handleChange(e)} />
+                    <input type="text" placeholder="Username" name="username" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={e => handleChange(e)} />
+                    <input type="password" placeholder="Password" name="password" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={e => handleChange(e)} />
                     <button type="submit" className="bg-orange-600 rounded font-bold text-white py-4 px-8 border-none cursor-pointer transition hover:bg-orange-900">Login</button>
                     <span className="text-white">Don't have an account? <Link to="/register" className="text-orange-600 font-bold no-underline">Sign up</Link></span>
                 </form>

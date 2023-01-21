@@ -22,4 +22,22 @@
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: #EA580B;
   }
+
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .select-wrapper {
+    position: relative;
+  }
+
+  .select-wrapper::after {
+    content: "▼";
+    font-size: 1rem;
+    top: 0.8rem;
+    right: 1rem;
+    position: absolute;
+    pointer-events: none;
+  }
 }

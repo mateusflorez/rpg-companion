@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useLocation } from "react-router-dom"
+import { Navigate, useLocation, useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import CharacterBuilder from "./characters/CharacterBuilder"
 import Characters from "./characters/Characters"
@@ -8,7 +8,14 @@ import Dashboard from "./Dashboard"
 function Static({ page }: { page: String }) {
     const [pageSelected, setPageSelected] = useState<String>("dashboard")
 
-    const location = useLocation
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const user = localStorage.getItem('user')
+        if (!user)
+            navigate('/login')
+    })
 
     useEffect(() => {
         setPageSelected(page)
