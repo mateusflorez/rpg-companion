@@ -43,16 +43,14 @@ class CharactersController {
                     userId
                 },
                 select: {
+                    id: true,
                     name: true,
                     level: true,
                     race: true,
                     charClass: true
                 }
             })
-            return res.status(200).json({
-                status: true,
-                characters: characters
-            })
+            return res.status(200).json(characters)
         } catch (err) {
             next(err)
         }

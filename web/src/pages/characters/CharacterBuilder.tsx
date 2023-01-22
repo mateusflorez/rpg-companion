@@ -80,7 +80,7 @@ function CharacterBuilder() {
     })
 
     useEffect(() => {
-        const userString = localStorage.getItem("user");
+        const userString = localStorage.getItem("user")
         if (userString) {
             setValues({
                 ...values, userId: (JSON.parse(userString)).id
