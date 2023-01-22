@@ -1,9 +1,19 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { getCharactersRoute } from "../../utils/APIRoutes"
+import { deleteCharacterRoute, getCharactersRoute } from "../../utils/APIRoutes"
+import { AiFillDelete } from "react-icons/ai"
+import { toast, ToastContainer, ToastOptions } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function Characters() {
+    const toastOptions: ToastOptions = {
+        position: 'bottom-right',
+        autoClose: 5000,
+        pauseOnHover: true,
+        theme: 'dark'
+    }
+
     const [characters, setCharacters] = useState<any>([])
 
     useEffect(() => {
@@ -15,7 +25,19 @@ function Characters() {
             }
         }
         getAllCharacters()
-    }, [])
+    }, [characters])
+
+    async function deleteButton(character: any) {
+        const userString = localStorage.getItem("user")
+        if (userString) {
+            const response = await axios.delete(`${deleteCharacterRoute}/${(JSON.parse(userString)).id}/${character.id}`)
+            console.log(response.data)
+            if (response.status === 204)
+                toast.success("Character deleted", toastOptions)
+            else
+                toast.error("Something gone wrong", toastOptions)
+        }
+    }
 
     return (
         <div className="pt-12 flex flex-col w-5/6">
@@ -23,13 +45,18 @@ function Characters() {
                 <h1 className="text-white font-bold text-4xl">My characters</h1>
                 <Link to={"/character-builder"}><button className="w-60 bg-orange-600 rounded font-bold text-white py-4 px-8 border-none cursor-pointer transition hover:bg-orange-900">Create a character</button></Link>
             </div>
-            <div className="pt-8 flex flex-row justify-center gap-8">
+            <div className="pt-8 grid grid-cols-3 gap-8">
                 {
                     characters && characters.map((character: any, index: any) => {
                         return (
-                            <div className="pt-1 bg-orange-600 rounded-lg w-full overflow-hidden">
-                                <div key={index} className='bg-cloudy px-4 py-4 rounded-t transition hover:bg-rainy' >
-                                    <h1 className="text-white font-semibold text-xl block">{character.name}</h1>
+                            <div key={index} className="pt-1 bg-orange-600 rounded-lg w-full overflow-hidden">
+                                <div className='bg-cloudy px-4 py-4 rounded-t h-full transition hover:bg-rainy' >
+                                    <div className="flex flex-row justify-between pb-2">
+                                        <h1 className="text-white font-semibold text-xl block">{character.name}</h1>
+                                        <button onClick={() => { deleteButton(character) }}>
+                                            <AiFillDelete className="text-orange-600 text-xl hover:text-orange-900" />
+                                        </button>
+                                    </div>
                                     <div>
                                         <p className=" text-zinc-500 text-sm">
                                             Level {character.level} | {character.race ? character.race : "No race selected"} | {character.charClass ? character.charClass : "No class selected"}
@@ -41,6 +68,7 @@ function Characters() {
                     })
                 }
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     )
 }

@@ -7,7 +7,7 @@ class CharactersController {
     async newCharacter(req: Request, res: Response, next: NextFunction) {
         try {
             const character = req.body
-            const newCharacter = await prisma.character.create({
+            await prisma.character.create({
                 data: {
                     userId: character.values.userId,
                     name: character.values.name,
@@ -29,7 +29,7 @@ class CharactersController {
                     skills: character.values.skills
                 }
             })
-            return res.status(201)
+            return res.status(201).send()
         } catch (err) {
             next(err)
         }
@@ -51,6 +51,30 @@ class CharactersController {
                 }
             })
             return res.status(200).json(characters)
+        } catch (err) {
+            next(err)
+        }
+    }
+
+    async deleteCharacter(req: Request, res: Response, next: NextFunction) {
+        try {
+            const userId = req.params.userId
+            const characterId = req.params.characterId
+
+            try {
+                await prisma.character.deleteMany({
+                    where: {
+                        AND: [
+                            { userId: userId },
+                            { id: characterId }
+                        ]
+                    }
+                });
+                return res.status(204).send()
+            }
+            catch {
+                return res.status(500).json({ status: false })
+            }
         } catch (err) {
             next(err)
         }

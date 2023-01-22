@@ -121,15 +121,14 @@ function CharacterBuilder() {
 
     async function handleSubmit(e: any) {
         e.preventDefault()
-        console.log(values)
         if (handleValidation()) {
-            const request = await axios.post(newCharacterRoute, {
+            const response = await axios.post(newCharacterRoute, {
                 values
             })
-            if (request.data.status === false) {
-                toast.error(request.data.message, toastOptions)
+            console.log(response.status)
+            if (response.status !== 201) {
+                toast.error(response.data.message, toastOptions)
             } else {
-                localStorage.setItem('user', JSON.stringify(request.data.user))
                 navigate("/characters")
             }
         }
