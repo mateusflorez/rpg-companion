@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express"
 import { PrismaClient } from "@prisma/client"
-import bcrypt from 'bcrypt'
 
 const prisma = new PrismaClient()
 
@@ -10,29 +9,29 @@ class CharactersController {
             const character = req.body
             const newCharacter = await prisma.character.create({
                 data: {
-                    userId: character.userId,
-                    name: character.name,
-                    race: character.race,
-                    charClass: character.charClass,
-                    level: character.level,
-                    experience: character.experience,
-                    alignment: character.alignment,
-                    background: character.background,
-                    hitPoints: character.hitPoints,
-                    deathSaves: character.deathSaves,
-                    inspiration: character.inspiration,
-                    proficiency: character.proficiency,
-                    armorClass: character.armorClass,
-                    initiative: character.initiative,
-                    speed: character.speed,
-                    passivePerception: character.passivePerception,
-                    attributes: character.attributes,
-                    skills: character.skills
+                    userId: character.values.userId,
+                    name: character.values.name,
+                    race: character.values.race,
+                    charClass: character.values.charClass,
+                    level: parseInt(character.values.level),
+                    experience: parseInt(character.values.experience),
+                    alignment: character.values.alignment,
+                    background: character.values.background,
+                    hitPoints: character.values.hitPoints,
+                    deathSaves: character.values.deathSaves,
+                    inspiration: character.values.inspiration,
+                    proficiency: parseInt(character.values.proficiency),
+                    armorClass: parseInt(character.values.armorClass),
+                    initiative: parseInt(character.values.initiative),
+                    speed: parseInt(character.values.speed),
+                    passivePerception: parseInt(character.values.passivePerception),
+                    attributes: character.values.attributes,
+                    skills: character.values.skills
                 }
             })
             return res.status(201).json({
                 status: true,
-                user: newCharacter
+                newCharacter: newCharacter
 
             })
         } catch (err) {
@@ -42,3 +41,4 @@ class CharactersController {
 }
 
 export { CharactersController }
+
