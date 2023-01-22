@@ -5,6 +5,8 @@ import { deleteCharacterRoute, getCharactersRoute } from "../../utils/APIRoutes"
 import { AiFillDelete } from "react-icons/ai"
 import { toast, ToastContainer, ToastOptions } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import Swal from "sweetalert2"
+import withReactContent from "sweetalert2-react-content"
 
 function Characters() {
     const toastOptions: ToastOptions = {
@@ -13,6 +15,8 @@ function Characters() {
         pauseOnHover: true,
         theme: 'dark'
     }
+
+    const MySwal = withReactContent(Swal)
 
     const [characters, setCharacters] = useState<any>([])
 
@@ -27,16 +31,37 @@ function Characters() {
         getAllCharacters()
     }, [characters])
 
-    async function deleteButton(character: any) {
+    function deleteButton(character: any) {
         const userString = localStorage.getItem("user")
-        if (userString) {
-            const response = await axios.delete(`${deleteCharacterRoute}/${(JSON.parse(userString)).id}/${character.id}`)
-            console.log(response.data)
-            if (response.status === 204)
-                toast.success("Character deleted", toastOptions)
-            else
-                toast.error("Something gone wrong", toastOptions)
-        }
+
+        MySwal.fire({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this character!",
+            icon: "warning",
+            showConfirmButton: true,
+            showDenyButton: true,
+            confirmButtonText: 'Yes',
+            denyButtonText: 'Cancel',
+            confirmButtonColor: '#EA580C',
+            denyButtonColor: '#6B6B5B'
+        })
+            .then(async (result) => {
+                if (result.isConfirmed) {
+                    if (userString)
+                        await axios.delete(`${deleteCharacterRoute}/${(JSON.parse(userString)).id}/${character.id}`)
+                    return MySwal.fire({
+                        text: "Poof! Your character has been deleted!",
+                        icon: "success",
+                        confirmButtonColor: '#EA580C'
+                    })
+                } else {
+                    return MySwal.fire({
+                        text: "Your character is safe!",
+                        icon: "info",
+                        confirmButtonColor: '#EA580C'
+                    })
+                }
+            })
     }
 
     return (
