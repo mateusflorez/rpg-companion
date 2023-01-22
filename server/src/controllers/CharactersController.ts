@@ -29,10 +29,29 @@ class CharactersController {
                     skills: character.values.skills
                 }
             })
-            return res.status(201).json({
-                status: true,
-                newCharacter: newCharacter
+            return res.status(201)
+        } catch (err) {
+            next(err)
+        }
+    }
 
+    async getAllCharacters(req: Request, res: Response, next: NextFunction) {
+        try {
+            const userId = req.params.id
+            const characters = await prisma.character.findMany({
+                where: {
+                    userId
+                },
+                select: {
+                    name: true,
+                    level: true,
+                    race: true,
+                    charClass: true
+                }
+            })
+            return res.status(200).json({
+                status: true,
+                characters: characters
             })
         } catch (err) {
             next(err)
@@ -41,4 +60,3 @@ class CharactersController {
 }
 
 export { CharactersController }
-

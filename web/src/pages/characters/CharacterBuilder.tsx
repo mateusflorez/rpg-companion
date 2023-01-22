@@ -130,7 +130,7 @@ function CharacterBuilder() {
                 toast.error(request.data.message, toastOptions)
             } else {
                 localStorage.setItem('user', JSON.stringify(request.data.user))
-                navigate("/")
+                navigate("/characters")
             }
         }
     }
