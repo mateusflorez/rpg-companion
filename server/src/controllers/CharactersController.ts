@@ -105,7 +105,7 @@ class CharactersController {
                     userId,
                     id
                 },
-                data: data
+                data: data.character
             });
 
             return res.status(200).send()

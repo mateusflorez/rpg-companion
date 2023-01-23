@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
-import { getCharacterRoute } from '../../utils/APIRoutes';
+import { getCharacterRoute, updateCharacterRoute } from '../../utils/APIRoutes';
 
 function CharacterSheet() {
     const { id } = useParams();
 
     const [character, setCharacter] = useState<any>([])
+
+    const userString = localStorage.getItem("user")
 
     useEffect(() => {
         const getCharacter = async () => {
@@ -20,7 +22,11 @@ function CharacterSheet() {
         getCharacter()
     }, [])
 
-    function handleChange(e: any) {
+    useEffect(() => {
+        updateCharacter()
+    }, [character])
+
+    async function handleChange(e: any) {
         if (e.target.name === 'totalHP') {
             setCharacter({
                 ...character, hitPoints: {
@@ -48,6 +54,12 @@ function CharacterSheet() {
         else {
             setCharacter({ ...character, [e.target.name]: e.target.value })
         }
+    }
+
+    async function updateCharacter() {
+        if (userString)
+            await axios.put(`${updateCharacterRoute}/${(JSON.parse(userString)).id}/${character.id}`, { character })
+        console.log('bla')
     }
 
     return (
