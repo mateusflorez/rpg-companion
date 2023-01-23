@@ -6,28 +6,9 @@ const prisma = new PrismaClient()
 class CharactersController {
     async newCharacter(req: Request, res: Response, next: NextFunction) {
         try {
-            const character = req.body
+            const data = req.body
             await prisma.character.create({
-                data: {
-                    userId: character.values.userId,
-                    name: character.values.name,
-                    race: character.values.race,
-                    charClass: character.values.charClass,
-                    level: parseInt(character.values.level),
-                    experience: parseInt(character.values.experience),
-                    alignment: character.values.alignment,
-                    background: character.values.background,
-                    hitPoints: character.values.hitPoints,
-                    deathSaves: character.values.deathSaves,
-                    inspiration: character.values.inspiration,
-                    proficiency: parseInt(character.values.proficiency),
-                    armorClass: parseInt(character.values.armorClass),
-                    initiative: parseInt(character.values.initiative),
-                    speed: parseInt(character.values.speed),
-                    passivePerception: parseInt(character.values.passivePerception),
-                    attributes: character.values.attributes,
-                    skills: character.values.skills
-                }
+                data: data.values
             })
             return res.status(201).send()
         } catch (err) {

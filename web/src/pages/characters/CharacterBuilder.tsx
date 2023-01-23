@@ -113,6 +113,8 @@ function CharacterBuilder() {
                     [e.target.name]: e.target.checked
                 }
             });
+        } else if (e.target.name === 'level' || e.target.name === 'experience' || e.target.name === 'proficiency' || e.target.name === 'armorClass' || e.target.name === 'initiative' || e.target.name === 'speed' || e.target.name === 'passivePerception' || e.target.name === 'experience') {
+            setValues({ ...values, [e.target.name]: parseInt(e.target.value) })
         }
         else {
             setValues({ ...values, [e.target.name]: e.target.value })

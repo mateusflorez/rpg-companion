@@ -50,6 +50,8 @@ function CharacterSheet() {
                     [e.target.name]: e.target.checked
                 }
             });
+        } else if (e.target.name === 'level' || e.target.name === 'experience') {
+            setCharacter({ ...character, [e.target.name]: parseInt(e.target.value) })
         }
         else {
             setCharacter({ ...character, [e.target.name]: e.target.value })
@@ -57,7 +59,7 @@ function CharacterSheet() {
     }
 
     async function updateCharacter() {
-        if (userString)
+        if (userString && character.id)
             await axios.put(`${updateCharacterRoute}/${(JSON.parse(userString)).id}/${character.id}`, { character })
         console.log('bla')
     }
