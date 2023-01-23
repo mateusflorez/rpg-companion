@@ -4,17 +4,10 @@
 ## Functionalities:
 + User sign up and login.
 + Save character sheets.
++ Community forum.
 + Answer generator.
 + Dice roller.
-+ Trip generator (Climate, encounter, settlement, disturbance).
-+ Encounter generator (Wild, urban, dungeon).
-+ Mission generator (Mission, source).
-+ Dungeon generator (Dungeon, areas).
-+ Terrain generator (Artic, coast, desert, forest, grassland, mountains, swamp, active area).
-+ Mission generator (Mission, source).
-+ City generator (Shops, merchant, rumors).
-+ NPC generator (worker, adventurer, random).
-+ Story elements generator (Elements, urban event, wild event, creatures, people, situations).
++ Adventure resources generators (Trip, Encounters, Missions, NPC's, Dungeons, etc).
 
 
 ## Instalation instructions:
