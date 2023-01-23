@@ -3,6 +3,7 @@ import { Navigate, useLocation, useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import CharacterBuilder from "./characters/CharacterBuilder"
 import Characters from "./characters/Characters"
+import CharacterSheet from "./characters/CharacterSheet"
 import Dashboard from "./Dashboard"
 
 function Static({ page }: { page: String }) {
@@ -29,6 +30,7 @@ function Static({ page }: { page: String }) {
                 {page === "dashboard" && <Dashboard />}
                 {page === "characters" && <Characters />}
                 {page === "characterBuilder" && <CharacterBuilder />}
+                {page === "characterSheet" && <CharacterSheet />}
             </div>
 
         </div>

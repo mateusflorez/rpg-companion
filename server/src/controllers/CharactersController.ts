@@ -56,18 +56,32 @@ class CharactersController {
         }
     }
 
+    async getCharacter(req: Request, res: Response, next: NextFunction) {
+        try {
+            const userId = req.params.userId
+            const id = req.params.characterId
+            const character = await prisma.character.findMany({
+                where: {
+                    id,
+                    userId
+                }
+            })
+            return res.status(200).json(character)
+        } catch (err) {
+            next(err)
+        }
+    }
+
     async deleteCharacter(req: Request, res: Response, next: NextFunction) {
         try {
             const userId = req.params.userId
-            const characterId = req.params.characterId
+            const id = req.params.characterId
 
             try {
                 await prisma.character.deleteMany({
                     where: {
-                        AND: [
-                            { userId: userId },
-                            { id: characterId }
-                        ]
+                        userId,
+                        id
                     }
                 });
                 return res.status(204).send()

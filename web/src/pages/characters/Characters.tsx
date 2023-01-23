@@ -3,19 +3,10 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { deleteCharacterRoute, getCharactersRoute } from "../../utils/APIRoutes"
 import { AiFillDelete } from "react-icons/ai"
-import { toast, ToastContainer, ToastOptions } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
 import Swal from "sweetalert2"
 import withReactContent from "sweetalert2-react-content"
 
 function Characters() {
-    const toastOptions: ToastOptions = {
-        position: 'bottom-right',
-        autoClose: 5000,
-        pauseOnHover: true,
-        theme: 'dark'
-    }
-
     const MySwal = withReactContent(Swal)
 
     const [characters, setCharacters] = useState<any>([])
@@ -74,26 +65,27 @@ function Characters() {
                 {
                     characters && characters.map((character: any, index: any) => {
                         return (
-                            <div key={index} className="pt-1 bg-orange-600 rounded-lg w-full overflow-hidden">
-                                <div className='bg-cloudy px-4 py-4 rounded-t h-full transition hover:bg-rainy' >
-                                    <div className="flex flex-row justify-between pb-2">
-                                        <h1 className="text-white font-semibold text-xl block">{character.name}</h1>
-                                        <button onClick={() => { deleteButton(character) }}>
-                                            <AiFillDelete className="text-orange-600 text-xl hover:text-orange-900" />
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <p className=" text-zinc-500 text-sm">
-                                            Level {character.level} | {character.race ? character.race : "No race selected"} | {character.charClass ? character.charClass : "No class selected"}
-                                        </p>
+                            <Link key={index} to={`/character-sheet/${character.id}`} >
+                                <div className="pt-1 bg-orange-600 rounded-lg w-full overflow-hidden">
+                                    <div className='bg-cloudy px-4 py-4 rounded-t h-full transition hover:bg-rainy' >
+                                        <div className="flex flex-row justify-between pb-2">
+                                            <h1 className="text-white font-semibold text-xl block">{character.name}</h1>
+                                            <button onClick={() => { deleteButton(character) }}>
+                                                <AiFillDelete className="text-orange-600 text-xl hover:text-orange-900" />
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <p className=" text-zinc-500 text-sm">
+                                                Level {character.level} | {character.race ? character.race : "No race selected"} | {character.charClass ? character.charClass : "No class selected"}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link >
                         )
                     })
                 }
             </div>
-            <ToastContainer></ToastContainer>
         </div>
     )
 }

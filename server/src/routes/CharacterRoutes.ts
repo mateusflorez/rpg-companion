@@ -7,5 +7,6 @@ const charactersController = new CharactersController()
 characterRoutes.post("/new-character", charactersController.newCharacter)
 characterRoutes.get("/all-characters/:id", charactersController.getAllCharacters)
 characterRoutes.delete("/delete-character/:userId/:characterId", charactersController.deleteCharacter)
+characterRoutes.get("/get-character/:userId/:characterId", charactersController.getCharacter)
 
 export { characterRoutes }
