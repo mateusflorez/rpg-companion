@@ -93,6 +93,27 @@ class CharactersController {
             next(err)
         }
     }
+
+    async updateCharacter(req: Request, res: Response, next: NextFunction) {
+        try {
+            const userId = req.params.userId
+            const id = req.params.characterId
+            const data = req.body
+
+            await prisma.character.updateMany({
+                where: {
+                    userId,
+                    id
+                },
+                data: data
+            });
+
+            return res.status(200).send()
+        } catch (err) {
+            next(err)
+        }
+    }
+
 }
 
 export { CharactersController }
