@@ -22,7 +22,7 @@ function Characters() {
             }
         }
         getAllCharacters()
-    }, [characters])
+    }, [])
 
     function deleteButton(character: any) {
         const userString = localStorage.getItem("user")
