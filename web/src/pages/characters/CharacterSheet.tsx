@@ -69,9 +69,9 @@ function CharacterSheet() {
 
     return (
         <div className="pt-12 flex flex-col w-5/6">
-            <div className="flex flex-row items-center justify-between w-full" >
-                <input type='text' name='name' className="text-white font-bold text-4xl bg-transparent focus:outline-none" value={character.name} onChange={(e) => handleChange(e)}></input>
-                <div className='grid grid-cols-3 justify-end gap-2 items-center w-3/6 pl-2'>
+            <div className="flex flex-col items-center justify-start lg:justify-between w-full gap-4 lg:flex-row" >
+                <input type='text' name='name' className="text-white font-bold text-4xl bg-transparent focus:outline-none -ml-28 lg:-ml-0" value={character.name} onChange={(e) => handleChange(e)}></input>
+                <div className='grid grid-cols-3 justify-end gap-2 items-center lg:w-3/6 pl-2'>
                     <div className='flex flex-row gap-2'>
                         <label className='text-zinc-500 text-sm'>Class:</label>
                         <div className="select-wrapper text-transparent w-full -mt-[0.2rem]">
@@ -143,7 +143,7 @@ function CharacterSheet() {
                     </div>
                 </div>
             </div>
-            <div className='my-8 grid grid-cols-2 gap-4'>
+            <div className='my-8 grid grid-cols-1 gap-4 lg:grid-cols-2'>
                 <div>
                     <div className='grid grid-cols-6 gap-4'>
                         <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden">
@@ -246,23 +246,21 @@ function CharacterSheet() {
                         </div>
                     </div>
                     <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden h-28">
-                        <div className='grid grid-rows-2 bg-cloudy h-full rounded-lg items-center justify-center py-4 pl-6'>
-                            <div className='grid grid-cols-2'>
-                                <div className='flex flex-row items-center justify-center gap-2'>
-                                    <h1 className='text-white font-bold bg-transparent text-sm'>Current</h1>
-                                    <h1 className='text-white font-bold bg-transparent text-sm'>Total</h1>
-                                </div>
-                                <h1 className='text-white font-bold bg-transparent text-sm text-center'>temp</h1>
+                        <div className='flex flex-col gap-1 bg-cloudy h-full rounded-lg items-center justify-center px-6'>
+                            <h1 className='text-center text-zinc-500 font-bold text-sm'>Hit points</h1>
+                            <div className='flex flex-row gap-9 w-full'>
+                                <h1 className='text-zinc-500 font-bold bg-transparent text-sm w-1/3'>Current</h1>
+                                <h1 className='text-zinc-500 font-bold bg-transparent text-sm w-1/3'>Total</h1>
+                                <h1 className='text-zinc-500 font-bold bg-transparent text-sm w-1/3'>temp</h1>
                             </div>
-                            <div className='grid grid-cols-2'>
-                                <div className='flex flex-row items-center'>
-                                    <input type="number" name='currentHP' className="text-right text-white font-bold bg-transparent w-full focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.currentHP} onChange={(e) => handleChange(e)} >
-                                    </input>
-                                    <h1 className='text-white font-bold bg-transparent text-3xl'>/</h1>
-                                    <input type="number" name='totalHP' className="text-left text-white font-bold bg-transparent w-full focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.totalHP} onChange={(e) => handleChange(e)} >
-                                    </input>
-                                </div>
-                                <input type="number" name='tempHP' className="text-center text-white font-bold bg-transparent w-full focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.tempHP} onChange={(e) => handleChange(e)} >
+                            <div className='flex flex-row items-center w-full'>
+                                <input type="number" name='currentHP' className="text-right text-white font-bold bg-transparent w-1/3 focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.currentHP} onChange={(e) => handleChange(e)} >
+                                </input>
+                                <h1 className='text-white font-bold bg-transparent text-3xl'>/</h1>
+                                <input type="number" name='totalHP' className="text-left text-white font-bold bg-transparent w-1/3 focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.totalHP} onChange={(e) => handleChange(e)} >
+                                </input>
+
+                                <input type="number" name='tempHP' className="text-right text-white font-bold bg-transparent w-1/3 focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.tempHP} onChange={(e) => handleChange(e)} >
                                 </input>
                             </div>
                         </div>
