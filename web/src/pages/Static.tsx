@@ -5,6 +5,7 @@ import CharacterBuilder from "./characters/CharacterBuilder"
 import Characters from "./characters/Characters"
 import CharacterSheet from "./characters/CharacterSheet"
 import Dashboard from "./Dashboard"
+import Generators from "./generators/Generators"
 
 function Static({ page }: { page: String }) {
     const [pageSelected, setPageSelected] = useState<String>("dashboard")
@@ -31,6 +32,7 @@ function Static({ page }: { page: String }) {
                 {page === "characters" && <Characters />}
                 {page === "characterBuilder" && <CharacterBuilder />}
                 {page === "characterSheet" && <CharacterSheet />}
+                {page === "generators" && <Generators />}
             </div>
 
         </div>

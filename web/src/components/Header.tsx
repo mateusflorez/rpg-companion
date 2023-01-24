@@ -13,6 +13,7 @@ function Header({ currentPage }: { currentPage: String }) {
                 <div className="pl-8 flex items-center gap-4">
                     <Link to={"/"} className={`${currentPage == "dashboard" ? "text-orange-500 font-bold" : "text-white font-medium"} text-xl cursor-pointer`} >Home</Link>
                     <Link to={"/characters"} className={`${currentPage == "characters" ? "text-orange-500 font-bold" : "text-white font-medium"} text-xl cursor-pointer`} >Characters</Link>
+                    <Link to={"/generators"} className={`${currentPage == "generators" ? "text-orange-500 font-bold" : "text-white font-medium"} text-xl cursor-pointer`} >Generators</Link>
                 </div>
             </div>
             <div className="flex items-center">

@@ -1,3 +1,4 @@
+import { Checkbox } from "@mui/material"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -226,7 +227,7 @@ function CharacterBuilder() {
                                 <input type="number" placeholder="Strength" name="strength" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={(e) => handleChange(e)} />
                             </div>
                             <div>
-                                <input type="checkbox" name="strengthst" className="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-transparent" onChange={(e) => handleChange(e)} />
+                                <Checkbox name="strengthst" onChange={(e) => handleChange(e)} style={{ color: "#EA580B" }} />
                             </div>
                         </div>
                         <div className="w-full flex flex-row items-center gap-4">
@@ -234,7 +235,7 @@ function CharacterBuilder() {
                                 <input type="number" placeholder="Dexterity" name="dexterity" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={(e) => handleChange(e)} />
                             </div>
                             <div>
-                                <input type="checkbox" name="dexterityst" className="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-transparent" onChange={(e) => handleChange(e)} />
+                                <Checkbox name="dexterityst" onChange={(e) => handleChange(e)} style={{ color: "#EA580B" }} />
                             </div>
                         </div>
                     </div>
@@ -244,7 +245,7 @@ function CharacterBuilder() {
                                 <input type="number" placeholder="Constitution" name="constitution" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={(e) => handleChange(e)} />
                             </div>
                             <div>
-                                <input type="checkbox" name="constitutionst" className="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-transparent" onChange={(e) => handleChange(e)} />
+                                <Checkbox name="constitutionst" onChange={(e) => handleChange(e)} style={{ color: "#EA580B" }} />
                             </div>
                         </div>
                         <div className="w-full flex flex-row items-center gap-4">
@@ -252,7 +253,7 @@ function CharacterBuilder() {
                                 <input type="number" placeholder="Intelligence" name="intelligence" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={(e) => handleChange(e)} />
                             </div>
                             <div>
-                                <input type="checkbox" name="intelligencest" className="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-transparent" onChange={(e) => handleChange(e)} />
+                                <Checkbox name="intelligencest" onChange={(e) => handleChange(e)} style={{ color: "#EA580B" }} />
                             </div>
                         </div>
                     </div>
@@ -262,7 +263,7 @@ function CharacterBuilder() {
                                 <input type="number" placeholder="Wisdom" name="wisdom" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={(e) => handleChange(e)} />
                             </div>
                             <div>
-                                <input type="checkbox" name="wisdomst" className="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-transparent" onChange={(e) => handleChange(e)} />
+                                <Checkbox name="wisdomst" onChange={(e) => handleChange(e)} style={{ color: "#EA580B" }} />
                             </div>
                         </div>
                         <div className="w-full flex flex-row items-center gap-4">
@@ -270,7 +271,7 @@ function CharacterBuilder() {
                                 <input type="number" placeholder="Charisma" name="charisma" className="placeholder:text-zinc-600 text-white bg-zinc-900 p-4 rounded w-full h-14 focus:outline-none focus:bg-zinc-600 transition" onChange={(e) => handleChange(e)} />
                             </div>
                             <div>
-                                <input type="checkbox" name="charismast" className="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-transparent" onChange={(e) => handleChange(e)} />
+                                <Checkbox name="charismast" onChange={(e) => handleChange(e)} style={{ color: "#EA580B" }} />
                             </div>
                         </div>
                     </div>
