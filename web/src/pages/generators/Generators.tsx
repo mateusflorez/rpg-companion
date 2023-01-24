@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import Answer from "./Answer"
+import Answer from "./functions/Answer"
 
 function Generators() {
 
