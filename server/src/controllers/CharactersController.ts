@@ -29,6 +29,9 @@ class CharactersController {
                     level: true,
                     race: true,
                     charClass: true
+                },
+                orderBy: {
+                    createdAt: 'desc'
                 }
             })
             return res.status(200).json(characters)

@@ -1,3 +1,4 @@
+import { Checkbox } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
@@ -27,7 +28,7 @@ function CharacterSheet() {
     }, [character])
 
     async function handleChange(e: any) {
-        if (e.target.name === 'totalHP') {
+        if (e.target.name === 'totalHP' || e.target.name === 'tempHP' || e.target.name === 'currentHP') {
             setCharacter({
                 ...character, hitPoints: {
                     ...character.hitPoints,
@@ -49,8 +50,10 @@ function CharacterSheet() {
                     ...character.attributes,
                     [e.target.name]: e.target.checked
                 }
-            });
-        } else if (e.target.name === 'level' || e.target.name === 'experience') {
+            })
+        } else if (e.target.name === 'inspiration') {
+            setCharacter({ ...character, [e.target.name]: e.target.checked })
+        } else if (e.target.name === 'level' || e.target.name === 'experience' || e.target.name === 'proficiency' || e.target.name === 'armorClass' || e.target.name === 'initiative' || e.target.name === 'speed' || e.target.name === 'passivePerception') {
             setCharacter({ ...character, [e.target.name]: parseInt(e.target.value) })
         }
         else {
@@ -140,7 +143,7 @@ function CharacterSheet() {
                     </div>
                 </div>
             </div>
-            <div className='my-8 grid grid-cols-2 gap-2'>
+            <div className='my-8 grid grid-cols-2 gap-4'>
                 <div>
                     <div className='grid grid-cols-6 gap-4'>
                         <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden">
@@ -168,7 +171,15 @@ function CharacterSheet() {
                             </input>
                         </div>
                     </div>
-                    <div className='grid grid-cols-6 gap-10 px-3 -mt-4'>
+                    <div className='grid grid-cols-6 gap-8 px-2 -mt-20'>
+                        <div className='text-zinc-500 text-xs text-center font-semibold h-fit'>Str</div>
+                        <div className='text-zinc-500 text-xs text-center font-semibold h-fit'>Dex</div>
+                        <div className='text-zinc-500 text-xs text-center font-semibold h-fit'>Const</div>
+                        <div className='text-zinc-500 text-xs text-center font-semibold h-fit'>Int</div>
+                        <div className='text-zinc-500 text-xs text-center font-semibold h-fit'>Wis</div>
+                        <div className='text-zinc-500 text-xs text-center font-semibold h-fit'>Cha</div>
+                    </div>
+                    <div className='grid grid-cols-6 gap-10 px-3 mt-12'>
                         <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden h-min">
                             <input disabled className="text-center text-white font-bold flex flex-col items-center justify-center rounded-lg bg-cloudy w-full h-8 focus:outline-none text-xl" value={character.attributes && Math.floor((parseInt(character.attributes.strength) - 10) / 2)}>
                             </input>
@@ -192,6 +203,68 @@ function CharacterSheet() {
                         <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden h-min">
                             <input disabled className="text-center text-white font-bold flex flex-col items-center justify-center rounded-lg bg-cloudy w-full h-8 focus:outline-none text-xl" value={character.attributes && Math.floor((parseInt(character.attributes.charisma) - 10) / 2)}>
                             </input>
+                        </div>
+                    </div>
+                </div>
+                <div className='grid grid-cols-[19%_19%_17%_45%] gap-4'>
+                    <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden h-28">
+                        <div className='grid grid-rows-3 bg-cloudy h-full rounded-lg items-center justify-center'>
+                            <span className='text-zinc-500 font-bold text-sm flex flex-row justify-center items-center'>Proficiency</span>
+                            <div className='grid grid-cols-2 w-full'>
+                                <span className='text-white font-bold text-3xl flex flex-row justify-end'>+</span>
+                                <input type="number" name='proficiency' className="text-left text-white font-bold flex flex-col bg-transparent focus:outline-none text-3xl" value={character.attributes && character.proficiency} onChange={(e) => handleChange(e)} >
+                                </input>
+                            </div>
+                            <span className='text-zinc-500 font-bold text-sm flex flex-row justify-center items-center'>Bônus</span>
+                        </div>
+                    </div>
+                    <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden h-28">
+                        <div className='grid grid-rows-3 bg-cloudy h-full rounded-lg items-center justify-center'>
+                            <span className='text-zinc-500 font-bold text-sm flex flex-row justify-center items-center'>Walking</span>
+                            <div className='grid grid-cols-2 w-full'>
+                                <input type="number" name='speed' className="text-right text-white font-bold flex flex-col bg-transparent focus:outline-none text-3xl" value={character.attributes && character.speed} onChange={(e) => handleChange(e)} >
+                                </input>
+                                <span className='text-white font-bold text-xl flex flex-row justify-start items-end'>mts</span>
+                            </div>
+                            <span className='text-zinc-500 font-bold text-sm flex flex-row justify-center items-center'>Speed</span>
+                        </div>
+                    </div>
+                    <div className='flex flex-col justify-center'>
+                        <div className='flex flex-col bg-cloudy rounded-lg items-center justify-center h-20'>
+                            <Checkbox
+                                checked={character.inspiration ? true : false}
+                                onChange={(e) => handleChange(e)}
+                                name='inspiration'
+                                style={{
+                                    color: "#EA580B"
+                                }}
+                                sx={{
+                                    '& .MuiSvgIcon-root': { fontSize: 40 }
+                                }}
+                            />
+                            <span className='text-zinc-500 font-bold text-xs flex flex-row justify-center items-center'>Inspiration</span>
+                        </div>
+                    </div>
+                    <div className=" p-[0.1rem] w-full bg-orange-600 rounded-lg overflow-hidden h-28">
+                        <div className='grid grid-rows-2 bg-cloudy h-full rounded-lg items-center justify-center py-4 pl-6'>
+                            <div className='grid grid-cols-2'>
+                                <div className='flex flex-row items-center justify-center gap-2'>
+                                    <h1 className='text-white font-bold bg-transparent text-sm'>Current</h1>
+                                    <h1 className='text-white font-bold bg-transparent text-sm'>Total</h1>
+                                </div>
+                                <h1 className='text-white font-bold bg-transparent text-sm text-center'>temp</h1>
+                            </div>
+                            <div className='grid grid-cols-2'>
+                                <div className='flex flex-row items-center'>
+                                    <input type="number" name='currentHP' className="text-right text-white font-bold bg-transparent w-full focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.currentHP} onChange={(e) => handleChange(e)} >
+                                    </input>
+                                    <h1 className='text-white font-bold bg-transparent text-3xl'>/</h1>
+                                    <input type="number" name='totalHP' className="text-left text-white font-bold bg-transparent w-full focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.totalHP} onChange={(e) => handleChange(e)} >
+                                    </input>
+                                </div>
+                                <input type="number" name='tempHP' className="text-center text-white font-bold bg-transparent w-full focus:outline-none text-3xl" value={character.hitPoints && character.hitPoints.tempHP} onChange={(e) => handleChange(e)} >
+                                </input>
+                            </div>
                         </div>
                     </div>
                 </div>
