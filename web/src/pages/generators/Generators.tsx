@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Answer from "./functions/Answer"
+import Terrain from "./functions/Terrain";
 
 function Generators() {
 
@@ -43,6 +44,18 @@ function Generators() {
                         <button onClick={() => { Answer(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Highly Likely</button>
                         <button onClick={() => { Answer(7); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Certainty</button>
                         <button onClick={() => { Answer(8); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">50/50</button>
+                    </div>
+                </div>
+                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                    <h1 className="text-zinc-500">Terrain</h1>
+                    <div className="">
+                        <button onClick={() => { Terrain(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Arctic</button>
+                        <button onClick={() => { Terrain(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Coastal</button>
+                        <button onClick={() => { Terrain(3); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Desert</button>
+                        <button onClick={() => { Terrain(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Forest</button>
+                        <button onClick={() => { Terrain(5); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Grassland</button>
+                        <button onClick={() => { Terrain(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Mountains</button>
+                        <button onClick={() => { Terrain(7); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Active area</button>
                     </div>
                 </div>
             </div>

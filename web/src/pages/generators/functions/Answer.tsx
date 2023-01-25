@@ -6,47 +6,47 @@ function Answer(param: number) {
     let dice
     let res = ""
 
-    const rndInt: any[] = Randomize(dices)
+    const randomizedDices: any[] = Randomize(dices)
 
     switch (param) {
         case 1:
-            dice = rndInt[0] - 6;
-            break;
+            dice = randomizedDices[0] - 6
+            break
         case 2:
-            dice = rndInt[0] - 4;
-            break;
+            dice = randomizedDices[0] - 4
+            break
         case 3:
-            dice = rndInt[0] - 2;
-            break;
+            dice = randomizedDices[0] - 2
+            break
         case 4:
-            dice = rndInt[0];
-            break;
+            dice = randomizedDices[0]
+            break
         case 5:
-            dice = rndInt[0] + 2;
-            break;
+            dice = randomizedDices[0] + 2
+            break
         case 6:
-            dice = rndInt[0] + 4;
-            break;
+            dice = randomizedDices[0] + 4
+            break
         case 7:
-            dice = rndInt[0] + 6;
-            break;
+            dice = randomizedDices[0] + 6
+            break
         case 8:
-            dice = rndInt[0];
-            break;
+            dice = randomizedDices[0]
+            break
     }
 
     if (param === 8) {
         if (dice <= 10) {
-            res = "Não"
+            res = "No"
         } else {
-            res = "Sim"
+            res = "Yes"
         }
     } else if (dice <= 6) {
-        res = "Não"
+        res = "No"
     } else if (dice > 6 && dice < 13) {
-        res = "Talvez"
+        res = "Maybe"
     } else {
-        res = "Sim"
+        res = "Yes"
     }
 
     const newHistory = SaveOnHistory(res)
