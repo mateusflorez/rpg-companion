@@ -4,6 +4,7 @@ import Arctic from "./Terrain/Arctic"
 import Coast from "./Terrain/Coastal"
 import Desert from "./Terrain/Desert"
 import Forest from "./Terrain/Forest"
+import Grassland from "./Terrain/Grassland"
 
 function Terrain(param: number) {
     const dices = [100]
@@ -25,7 +26,7 @@ function Terrain(param: number) {
             res = Forest(randomizedDices)
             break
         case 5:
-            res = "🚧 WIP"
+            res = Grassland(randomizedDices)
             break
         case 6:
             res = "🚧 WIP"

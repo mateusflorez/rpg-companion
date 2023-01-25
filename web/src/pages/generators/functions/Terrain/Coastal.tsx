@@ -9,23 +9,23 @@ function Coastal(dices: any[]) {
     let res = ""
 
     if (dices[0] < 61) {
-        res = "Continuing coastal terrain.";
+        res = "Continuing coastal terrain."
     } else if (dices[0] > 60 && dices[0] < 66) {
-        res = "Hills. " + HillRandomize();
+        res = "Hills. " + HillRandomize()
     } else if (dices[0] > 65 && dices[0] < 71) {
-        res = "Gully. " + GullyRandomize();
+        res = "Gully. " + GullyRandomize()
     } else if (dices[0] > 70 && dices[0] < 76) {
-        res = "Waterway. " + WaterwayRandomize();
+        res = "Waterway. " + WaterwayRandomize()
     } else if (dices[0] > 75 && dices[0] < 81) {
-        res = "Small Wood. " + WoodRandomize();
+        res = "Small Wood. " + WoodRandomize()
     } else if (dices[0] > 80 && dices[0] < 86) {
-        res = "Rocky outcrop. " + RockyOutcropRandomize();
+        res = "Rocky outcrop. " + RockyOutcropRandomize()
     } else if (dices[0] > 85 && dices[0] < 91) {
-        res = "Unmarked Settlement. " + SettlementRandomize();
+        res = "Unmarked Settlement. " + SettlementRandomize()
     } else if (dices[0] > 90 && dices[0] < 96) {
-        res = "!!! D6 roll. 1-2: Structure / 3-4: Monument / 5-6: Interesting landscape feature. !!!";
+        res = "!!! D6 roll. 1-2: Structure / 3-4: Monument / 5-6: Interesting landscape feature. !!!"
     } else {
-        res = "Monster Lair.";
+        res = "Monster Lair."
     }
 
 
