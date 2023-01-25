@@ -3,6 +3,7 @@ import SaveOnHistory from "./shared/SaveOnHistory"
 import Arctic from "./Terrain/Arctic"
 import Coast from "./Terrain/Coastal"
 import Desert from "./Terrain/Desert"
+import Forest from "./Terrain/Forest"
 
 function Terrain(param: number) {
     const dices = [100]
@@ -21,7 +22,7 @@ function Terrain(param: number) {
             res = Desert(randomizedDices)
             break
         case 4:
-            res = "🚧 WIP"
+            res = Forest(randomizedDices)
             break
         case 5:
             res = "🚧 WIP"

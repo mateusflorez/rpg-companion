@@ -19,7 +19,7 @@ function Desert(dices: any[]) {
     } else if (dices[0] > 90 && dices[0] < 96) {
         res = "!!! D6 roll. 1-2: Structure / 3-4: Monument / 5-6: Interesting landscape feature. !!!";
     } else {
-        res = "Covil de Monstro.";
+        res = "Monster Lair.";
     }
 
     return res
