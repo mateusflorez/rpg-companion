@@ -60,7 +60,7 @@ function WaterwayRandomize() {
     } else {
         let temp1 = MinMaxRandomize(1, 100)
         if (temp1 < 21) {
-            temp2 += " Saque!"
+            temp2 += " Loot!"
         }
         temp1 = MinMaxRandomize(1, 100)
         if (temp1 < 41) {
