@@ -1,5 +1,6 @@
 import Randomize from "./shared/Randomize"
 import SaveOnHistory from "./shared/SaveOnHistory"
+import ActiveArea from "./Terrain/ActiveArea"
 import Arctic from "./Terrain/Arctic"
 import Coast from "./Terrain/Coastal"
 import Desert from "./Terrain/Desert"
@@ -33,7 +34,7 @@ function Terrain(param: number) {
             res = Mountain(randomizedDices)
             break
         case 7:
-            res = "🚧 WIP"
+            res = ActiveArea(randomizedDices)
             break
     }
 
