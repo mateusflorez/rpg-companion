@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import Answer from "../components/functions/Answer"
-import StoryElements from "../components/functions/StoryElements";
-import Terrain from "../components/functions/Terrain";
+import Answer from "../components/generators/Answer"
+import StoryElements from "../components/generators/StoryElements";
+import Terrain from "../components/generators/Terrain";
 
 function Generators() {
 
