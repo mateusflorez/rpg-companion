@@ -1,6 +1,7 @@
 import RandomNpc from "./npcs/RandomNpc"
 import SaveOnHistory from "./shared/SaveOnHistory"
 import Creature from "./storyElement/Creature"
+import ElementRandomize from "./storyElement/ElementRandomize"
 import Situation from "./storyElement/Situation"
 import UrbanEvent from "./storyElement/UrbanEvent"
 import WildernessEvent from "./storyElement/WildernessEvent"
@@ -10,7 +11,7 @@ function StoryElements(param: number) {
 
     switch (param) {
         case 1:
-            res = "🚧WIP"
+            res = ElementRandomize()
             break
         case 2:
             res = UrbanEvent()
