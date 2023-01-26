@@ -3,6 +3,7 @@ import Answer from "../components/generators/Answer"
 import Dices from "../components/generators/Dices";
 import StoryElements from "../components/generators/StoryElements";
 import Terrain from "../components/generators/Terrain";
+import Traveling from "../components/generators/Traveling";
 
 function Generators() {
 
@@ -69,6 +70,15 @@ function Generators() {
                         <button onClick={() => { StoryElements(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Creatures</button>
                         <button onClick={() => { StoryElements(5); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">People</button>
                         <button onClick={() => { StoryElements(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Situations</button>
+                    </div>
+                </div>
+                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                    <h1 className="text-zinc-500">Traveling</h1>
+                    <div className="">
+                        <button onClick={() => { Traveling(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Weather</button>
+                        <button onClick={() => { Traveling(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Encounter</button>
+                        <button onClick={() => { Traveling(3); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Settlement</button>
+                        <button onClick={() => { Traveling(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Disturbances</button>
                     </div>
                 </div>
                 <div className="pt-8 w-full flex flex-col justify-center gap-2" >
