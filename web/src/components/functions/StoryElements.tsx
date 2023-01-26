@@ -1,6 +1,7 @@
 import Randomize from "./shared/Randomize"
 import SaveOnHistory from "./shared/SaveOnHistory"
 import UrbanEvent from "./storyElement/UrbanEvent"
+import WildernessEvent from "./storyElement/WildernessEvent"
 
 function StoryElements(param: number) {
     let res = ""
@@ -13,7 +14,7 @@ function StoryElements(param: number) {
             res = UrbanEvent()
             break
         case 3:
-            res = "🚧WIP"
+            res = WildernessEvent()
             break
         case 4:
             res = "🚧WIP"
