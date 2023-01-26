@@ -5,7 +5,7 @@ import CharacterBuilder from "./characters/CharacterBuilder"
 import Characters from "./characters/Characters"
 import CharacterSheet from "./characters/CharacterSheet"
 import Dashboard from "./Dashboard"
-import Generators from "./generators/Generators"
+import Generators from "./Generators"
 
 function Static({ page }: { page: String }) {
     const [pageSelected, setPageSelected] = useState<String>("dashboard")

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
-import Answer from "./functions/Answer"
-import Terrain from "./functions/Terrain";
+import Answer from "../components/functions/Answer"
+import StoryElements from "../components/functions/StoryElements";
+import Terrain from "../components/functions/Terrain";
 
 function Generators() {
 
@@ -56,6 +57,17 @@ function Generators() {
                         <button onClick={() => { Terrain(5); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Grassland</button>
                         <button onClick={() => { Terrain(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Mountains</button>
                         <button onClick={() => { Terrain(7); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Active area</button>
+                    </div>
+                </div>
+                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                    <h1 className="text-zinc-500">Story elements</h1>
+                    <div className="">
+                        <button onClick={() => { StoryElements(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Elements</button>
+                        <button onClick={() => { StoryElements(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Urban event</button>
+                        <button onClick={() => { StoryElements(3); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Wilderness events</button>
+                        <button onClick={() => { StoryElements(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Creatures</button>
+                        <button onClick={() => { StoryElements(5); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">People</button>
+                        <button onClick={() => { StoryElements(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Situations</button>
                     </div>
                 </div>
             </div>

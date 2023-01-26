@@ -1,3 +1,4 @@
+import MinMaxRandomize from "../shared/MinMaxRandomize"
 import HillRandomize from "./minor/HillRandomize"
 import MountainRangeRandomize from "./minor/MountainRangeRandomize"
 import RockyOutcropRandomize from "./minor/RockyOutcropRandomize"
@@ -5,25 +6,26 @@ import SettlementRandomize from "./minor/SettlementRandomize"
 import WaterwayRandomize from "./minor/WaterwayRandomize"
 import WoodRandomize from "./minor/WoodRandomize"
 
-function Arctic(dices: any[]) {
+function Arctic() {
     let res = ""
+    const rand = MinMaxRandomize(1, 100)
 
-    if (dices[0] < 61) {
+    if (rand < 61) {
         res = "Continuing arctic terrain."
-    } else if (dices[0] > 60 && dices[0] < 66) {
+    } else if (rand > 60 && rand < 66) {
         res = "Icy hills. " + HillRandomize()
-    } else if (dices[0] > 65 && dices[0] < 71) {
+    } else if (rand > 65 && rand < 71) {
         res = "Small mountain range / foothills. " + MountainRangeRandomize()
-    } else if (dices[0] > 70 && dices[0] < 76) {
+    } else if (rand > 70 && rand < 76) {
         res = "Waterway (probably frozen). " + WaterwayRandomize()
-    } else if (dices[0] > 75 && dices[0] < 81) {
+    } else if (rand > 75 && rand < 81) {
         res = "Small Wood. " + WoodRandomize()
-    } else if (dices[0] > 80 && dices[0] < 86) {
+    } else if (rand > 80 && rand < 86) {
         res = "Rocky outcrop. " + RockyOutcropRandomize()
-    } else if (dices[0] > 85 && dices[0] < 91) {
+    } else if (rand > 85 && rand < 91) {
         res = "Unmarked Settlement. " + SettlementRandomize()
-    } else if (dices[0] > 90 && dices[0] < 96) {
-        res = "!!! D6 roll. 1-2: Structure / 3-4: Monument / 5-6: Interesting landscape feature. !!!"
+    } else if (rand > 90 && rand < 96) {
+        res = "🚧 !!! D6 roll. 1-2: Structure / 3-4: Monument / 5-6: Interesting landscape feature. !!!"
     } else {
         res = "Monster Lair."
     }
