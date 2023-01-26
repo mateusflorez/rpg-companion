@@ -1,4 +1,4 @@
-import Randomize from "./shared/Randomize"
+import RandomNpc from "./npcs/RandomNpc"
 import SaveOnHistory from "./shared/SaveOnHistory"
 import Creature from "./storyElement/Creature"
 import Situation from "./storyElement/Situation"
@@ -22,7 +22,7 @@ function StoryElements(param: number) {
             res = Creature()
             break
         case 5:
-            res = "🚧WIP"
+            res = RandomNpc()
             break
         case 6:
             res = Situation()

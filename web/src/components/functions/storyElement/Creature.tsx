@@ -6,83 +6,83 @@ function Creature() {
     let creature = ""
 
     if (rand < 3) {
-        creature += "Monster!";
+        creature += "Monster!"
     } else if (rand === 3) {
-        creature += "Bear.";
+        creature += "Bear."
     } else if (rand === 4) {
-        creature += "Cat.";
+        creature += "Cat."
     } else if (rand === 5) {
-        creature += "Dire Wolf.";
+        creature += "Dire Wolf."
     } else if (rand === 6) {
-        creature += "Dog.";
+        creature += "Dog."
     } else if (rand === 7) {
-        creature += "Draft Horse.";
+        creature += "Draft Horse."
     } else if (rand === 8) {
-        creature += "Eagle.";
+        creature += "Eagle."
     } else if (rand === 9) {
-        creature += "Elephant.";
+        creature += "Elephant."
     } else if (rand === 10) {
-        creature += "Elk.";
+        creature += "Elk."
     } else if (rand === 11) {
-        creature += "Flying Snake.";
+        creature += "Flying Snake."
     } else if (rand === 12) {
-        creature += "Ape.";
+        creature += "Ape."
     } else if (rand === 13) {
-        creature += "Giant Ape.";
+        creature += "Giant Ape."
     } else if (rand === 14) {
-        creature += "Giant Badger.";
+        creature += "Giant Badger."
     } else if (rand === 15) {
-        creature += "Giant Boar.";
+        creature += "Giant Boar."
     } else if (rand === 16) {
-        creature += "Giant Eagle.";
+        creature += "Giant Eagle."
     } else if (rand === 17) {
-        creature += "Giant Elk.";
+        creature += "Giant Elk."
     } else if (rand === 18) {
-        creature += "Giant Fire Beetle.";
+        creature += "Giant Fire Beetle."
     } else if (rand === 19) {
-        creature += "Giant Frog.";
+        creature += "Giant Frog."
     } else if (rand === 20) {
-        creature += "Giant Lizard.";
+        creature += "Giant Lizard."
     } else if (rand === 21) {
-        creature += "Giant Owl.";
+        creature += "Giant Owl."
     } else if (rand === 22) {
-        creature += "Giant Rat.";
+        creature += "Giant Rat."
     } else if (rand === 23) {
-        creature += "Giant Spider.";
+        creature += "Giant Spider."
     } else if (rand === 24) {
-        creature += "Goat.";
+        creature += "Goat."
     } else if (rand === 25) {
-        creature += "Hawk.";
+        creature += "Hawk."
     } else if (rand === 26) {
-        creature += "Mastiff.";
+        creature += "Mastiff."
     } else if (rand === 27) {
-        creature += "Mule.";
+        creature += "Mule."
     } else if (rand === 28) {
-        creature += "Owl.";
+        creature += "Owl."
     } else if (rand === 29) {
-        creature += "Riding Horse.";
+        creature += "Riding Horse."
     } else if (rand === 30) {
-        creature += "Panther.";
+        creature += "Panther."
     } else if (rand === 31) {
-        creature += "Poisonous Snake.";
+        creature += "Poisonous Snake."
     } else if (rand === 32) {
-        creature += "Pony.";
+        creature += "Pony."
     } else if (rand === 33) {
-        creature += "Rat.";
+        creature += "Rat."
     } else if (rand === 34) {
-        creature += "Raven.";
+        creature += "Raven."
     } else if (rand === 35) {
-        creature += "Swarm of Insects.";
+        creature += "Swarm of Insects."
     } else if (rand === 36) {
-        creature += "Swarm of rats.";
+        creature += "Swarm of rats."
     } else if (rand === 37) {
-        creature += "Swarm of ravens.";
+        creature += "Swarm of ravens."
     } else if (rand === 38) {
-        creature += "Vulture.";
+        creature += "Vulture."
     } else if (rand === 39) {
-        creature += "Weasel.";
+        creature += "Weasel."
     } else {
-        creature += "Wolf.";
+        creature += "Wolf."
     }
 
     return creature
