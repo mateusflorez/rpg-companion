@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Answer from "../components/generators/Answer"
+import Dices from "../components/generators/Dices";
 import StoryElements from "../components/generators/StoryElements";
 import Terrain from "../components/generators/Terrain";
 
@@ -26,7 +27,7 @@ function Generators() {
     }
 
     return (
-        <div className="pt-12 flex flex-col w-5/6">
+        <div className="py-12 flex flex-col w-5/6">
             <div className="flex flex-row justify-between w-full" >
                 <h1 className="text-white font-bold text-4xl">Generators</h1>
             </div>
@@ -68,6 +69,18 @@ function Generators() {
                         <button onClick={() => { StoryElements(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Creatures</button>
                         <button onClick={() => { StoryElements(5); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">People</button>
                         <button onClick={() => { StoryElements(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Situations</button>
+                    </div>
+                </div>
+                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                    <h1 className="text-zinc-500">Roll dice</h1>
+                    <div className="">
+                        <button onClick={() => { Dices(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D4</button>
+                        <button onClick={() => { Dices(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D6</button>
+                        <button onClick={() => { Dices(8); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D8</button>
+                        <button onClick={() => { Dices(10); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D10</button>
+                        <button onClick={() => { Dices(12); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D12</button>
+                        <button onClick={() => { Dices(20); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D20</button>
+                        <button onClick={() => { Dices(100); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D100</button>
                     </div>
                 </div>
             </div>
