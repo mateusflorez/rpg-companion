@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Answer from "../components/generators/Answer"
 import Dices from "../components/generators/Dices";
+import Npcs from "../components/generators/Npcs";
 import StoryElements from "../components/generators/StoryElements";
 import Terrain from "../components/generators/Terrain";
 import Traveling from "../components/generators/Traveling";
@@ -36,7 +37,7 @@ function Generators() {
                 <textarea ref={historyLogRef} className="bg-zinc-900 rounded resize-none text-zinc-600 scrollbar p-4" name="history" id="history" disabled={true} rows={10}></textarea>
             </div>
             <div className="grid grid-cols-3">
-                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                <div className="pt-2 w-full flex flex-col justify-center gap-2" >
                     <h1 className="text-zinc-500">Answer generator</h1>
                     <div className="">
                         <button onClick={() => { Answer(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Impossible</button>
@@ -49,7 +50,7 @@ function Generators() {
                         <button onClick={() => { Answer(8); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">50/50</button>
                     </div>
                 </div>
-                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                <div className="pt-2 w-full flex flex-col justify-center gap-2" >
                     <h1 className="text-zinc-500">Terrain</h1>
                     <div className="">
                         <button onClick={() => { Terrain(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Arctic</button>
@@ -61,7 +62,7 @@ function Generators() {
                         <button onClick={() => { Terrain(7); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Active area</button>
                     </div>
                 </div>
-                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                <div className="pt-2 w-full flex flex-col justify-center gap-2" >
                     <h1 className="text-zinc-500">Story elements</h1>
                     <div className="">
                         <button onClick={() => { StoryElements(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Elements</button>
@@ -72,7 +73,7 @@ function Generators() {
                         <button onClick={() => { StoryElements(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Situations</button>
                     </div>
                 </div>
-                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                <div className="pt-2 w-full flex flex-col justify-center gap-2" >
                     <h1 className="text-zinc-500">Traveling</h1>
                     <div className="">
                         <button onClick={() => { Traveling(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Weather</button>
@@ -81,7 +82,15 @@ function Generators() {
                         <button onClick={() => { Traveling(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Disturbances</button>
                     </div>
                 </div>
-                <div className="pt-8 w-full flex flex-col justify-center gap-2" >
+                <div className="pt-2 w-full flex flex-col justify-center gap-2" >
+                    <h1 className="text-zinc-500">NPC's</h1>
+                    <div className="">
+                        <button onClick={() => { Npcs(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Random</button>
+                        <button onClick={() => { Npcs(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Worker</button>
+                        <button onClick={() => { Npcs(3); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Adventurer</button>
+                    </div>
+                </div>
+                <div className="pt-2 w-full flex flex-col justify-center gap-2" >
                     <h1 className="text-zinc-500">Roll dice</h1>
                     <div className="">
                         <button onClick={() => { Dices(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D4</button>

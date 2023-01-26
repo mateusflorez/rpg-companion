@@ -5,22 +5,22 @@ import GenderRandomize from "./shared/GenderRandomize"
 import ProfessionRandomize from "./shared/ProfessionRandomize"
 import RaceRandomize from "./shared/RaceRandomize"
 
-function Adventurer() {
-    let adventurer = ""
+function Worker() {
+    let worker = ""
 
-    adventurer += RaceRandomize()
+    worker += RaceRandomize()
 
-    adventurer += GenderRandomize()
+    worker += GenderRandomize()
 
-    adventurer += AlignmentRandomize()
+    worker += AlignmentRandomize()
 
-    adventurer += ProfessionRandomize()
+    worker += ProfessionRandomize()
 
-    adventurer += DispositionRandomize()
+    worker += DispositionRandomize()
 
-    adventurer += EconomicStatusRandomize()
+    worker += EconomicStatusRandomize()
 
-    return adventurer
+    return worker
 }
 
-export default Adventurer
+export default Worker
