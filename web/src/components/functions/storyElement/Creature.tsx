@@ -1,5 +1,4 @@
 import MinMaxRandomize from "../shared/MinMaxRandomize"
-import SettlementRandomize from "../terrain/minor/SettlementRandomize";
 
 
 function Creature() {
