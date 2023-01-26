@@ -1,5 +1,6 @@
 import Randomize from "./shared/Randomize"
 import SaveOnHistory from "./shared/SaveOnHistory"
+import Creature from "./storyElement/Creature"
 import UrbanEvent from "./storyElement/UrbanEvent"
 import WildernessEvent from "./storyElement/WildernessEvent"
 
@@ -17,7 +18,7 @@ function StoryElements(param: number) {
             res = WildernessEvent()
             break
         case 4:
-            res = "🚧WIP"
+            res = Creature()
             break
         case 5:
             res = "🚧WIP"
