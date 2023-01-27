@@ -7,6 +7,7 @@ import Terrain from "../components/generators/Terrain";
 import Traveling from "../components/generators/Traveling";
 import Dungeon from "../components/generators/Dungeon";
 import Quest from "../components/generators/Quest";
+import Settlement from "../components/generators/Settlement";
 
 function Generators() {
 
@@ -107,6 +108,14 @@ function Generators() {
                     <div className="">
                         <button onClick={() => { Quest(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Quest</button>
                         <button onClick={() => { Quest(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Source</button>
+                    </div>
+                </div>
+                <div className="pt-2 w-full flex flex-col justify-center gap-2" >
+                    <h1 className="text-zinc-500">Settlement</h1>
+                    <div className="">
+                        <button onClick={() => { Settlement(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Trades</button>
+                        <button onClick={() => { Settlement(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">Merchant</button>
+                        <button onClick={() => { Settlement(3); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Rumors</button>
                     </div>
                 </div>
                 <div className="pt-2 w-full flex flex-col justify-center gap-2" >
