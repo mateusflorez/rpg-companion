@@ -1,3 +1,4 @@
+import AreaRandomize from "./dungeon/AreaRandomize"
 import DungeonRandomize from "./dungeon/DungeonRandomize"
 import SaveOnHistory from "./shared/SaveOnHistory"
 
@@ -6,7 +7,7 @@ function Dungeon(param: number) {
 
     switch (param) {
         case 1:
-            res = "🚧 WIP"
+            res = AreaRandomize()
             break
         case 2:
             res = DungeonRandomize()

@@ -1,7 +1,12 @@
 import MinMaxRandomize from "../../shared/MinMaxRandomize"
 import Randomize from "../../shared/Randomize"
+import ArchitectureRandomize from "./ArchitectureRandomize"
+import ClueRandomize from "./ClueRandomize"
 import DoorRandomize from "./DoorRandomize"
 import RoomRandomize from "./RoomRandomize"
+import SecretDoorRandomize from "./SecretDoorRandomize"
+import StairRandomize from "./StairRandomize"
+import TrapRandomize from "./TrapRandomize"
 
 
 function PassageRandomize() {
@@ -17,21 +22,21 @@ function PassageRandomize() {
         let temp1 = MinMaxRandomize(1, 100)
         var temp2 = ""
         if (temp1 < 11) {
-            temp2 = " Clue! Perception check DC 10 to find. " + clueRandomizer()
+            temp2 = " Clue! Perception check DC 10 to find. " + ClueRandomize()
         }
         passageContent = " Empty passage apart from rubble." + temp2
     } else if (randomizedDices[1] > 80 && randomizedDices[1] < 85) {
         let temp1 = MinMaxRandomize(1, 100)
         var temp2 = ""
         if (temp1 < 21) {
-            temp2 = " Clue on body! " + clueRandomizer()
+            temp2 = " Clue on body! " + ClueRandomize()
         }
         passageContent = " Empty passage apart from multiple corpses." + temp2
     } else if (randomizedDices[1] > 84 && randomizedDices[1] < 89) {
         let temp1 = MinMaxRandomize(1, 100)
         var temp2 = ""
         if (temp1 < 41) {
-            temp2 = " Clue on a body! " + clueRandomizer()
+            temp2 = " Clue on a body! " + ClueRandomize()
         }
         passageContent = " Empty passage apart from multiple corpses." + temp2
     } else if (randomizedDices[1] > 88 && randomizedDices[1] < 91) {
@@ -43,7 +48,7 @@ function PassageRandomize() {
         }
         temp1 = MinMaxRandomize(1, 100)
         if (temp1 < 16) {
-            temp3 = " Clue! " + clueRandomizer()
+            temp3 = " Clue! " + ClueRandomize()
         }
         passageContent = " Empty passage apart from enemies. Level-appropriate easy encounter." + temp2 + temp3
     } else if (randomizedDices[1] > 90 && randomizedDices[1] < 93) {
@@ -55,7 +60,7 @@ function PassageRandomize() {
         }
         temp1 = MinMaxRandomize(1, 100)
         if (temp1 < 26) {
-            temp3 = " Clue! " + clueRandomizer()
+            temp3 = " Clue! " + ClueRandomize()
         }
         passageContent = " Empty passage apart from enemies. Level-appropriate medium encounter." + temp2 + temp3
     } else if (randomizedDices[1] > 92 && randomizedDices[1] < 95) {
@@ -67,11 +72,11 @@ function PassageRandomize() {
         }
         temp1 = MinMaxRandomize(1, 100)
         if (temp1 < 51) {
-            temp3 = " Clue! " + clueRandomizer()
+            temp3 = " Clue! " + ClueRandomize()
         }
         passageContent = " Empty passage apart from enemies. Level-appropriate hard encounter." + temp2 + temp3
     } else if (randomizedDices[1] > 94 && randomizedDices[1] < 99) {
-        passageContent = " Trap! " + trapRandomizer()
+        passageContent = " Trap! " + TrapRandomize()
     } else {
         let temp1 = MinMaxRandomize(1, 100)
         if (temp1 < 61) {
@@ -86,7 +91,7 @@ function PassageRandomize() {
     } else if (randomizedDices[0] === 2) {
         passage = "Passage. Passage goes 15 ft and ends at door. " + passageContent + RoomRandomize()
     } else if (randomizedDices[0] === 3) {
-        passage = "Passage. Passage goes 30 ft and ends in stairs. " + passageContent + stairRandomizer()
+        passage = "Passage. Passage goes 30 ft and ends in stairs. " + passageContent + StairRandomize()
     } else if (randomizedDices[0] === 4) {
         passage = "Passage. Passage turns left 90 degrees." + passageContent
     } else if (randomizedDices[0] === 5) {
@@ -108,15 +113,15 @@ function PassageRandomize() {
     } else if (randomizedDices[0] === 13) {
         passage = "Passage. Door in left wall. " + passageContent + DoorRandomize()
     } else if (randomizedDices[0] === 14) {
-        passage = "Passage. Secret door on passage wall (player's choice which wall). Roll perception DC 15. If successful, go to Secret Door.If not, roll again, continuing along(as your PCs didn't notice.). " + passageContent + sdRandomizer()
+        passage = "Passage. Secret door on passage wall (player's choice which wall). Roll perception DC 15. If successful, go to Secret Door.If not, roll again, continuing along(as your PCs didn't notice.). " + passageContent + SecretDoorRandomize()
     } else if (randomizedDices[0] === 15) {
         passage = "Passage. Narrow passage " + (MinMaxRandomize(1, 6) / 2) * 10 + " ft." + passageContent
     } else if (randomizedDices[0] === 16) {
         passage = "Passage. Wide passage " + (MinMaxRandomize(1, 6) / 2) * 10 + " ft." + passageContent
     } else if (randomizedDices[0] === 17) {
-        passage = "Passage. Opening to the left, stairs. " + passageContent + stairRandomizer()
+        passage = "Passage. Opening to the left, stairs. " + passageContent + StairRandomize()
     } else if (randomizedDices[0] === 18) {
-        passage = "Passage. Opening to the right, stairs. " + passageContent + stairRandomizer()
+        passage = "Passage. Opening to the right, stairs. " + passageContent + StairRandomize()
     } else if (randomizedDices[0] === 19) {
         let temp1 = MinMaxRandomize(1, 100)
         var temp = ""
@@ -128,7 +133,7 @@ function PassageRandomize() {
         }
         passage = "Passage. Opening in the floor, straight drop down " + MinMaxRandomize(1, 10) * 10 + " to a " + temp
     } else {
-        passage = "Passage. There's an architecture on the passage. " + passageContent + archRandomizer()
+        passage = "Passage. There's an architecture on the passage. " + passageContent + ArchitectureRandomize()
     }
 
     return passage
