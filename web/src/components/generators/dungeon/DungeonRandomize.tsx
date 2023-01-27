@@ -12,50 +12,50 @@ function DungeonRandomize() {
     const randomizedDices: any[] = Randomize(dices)
 
     if (randomizedDices[0] < 4) {
-        size = "Tiny";
-        rooms = MinMaxRandomize(1, 4) + 2;
+        size = "Tiny"
+        rooms = MinMaxRandomize(1, 4) + 2
     } else if (randomizedDices[0] > 3 && randomizedDices[0] < 9) {
-        size = "Small";
-        rooms = MinMaxRandomize(1, 6) + 4;
+        size = "Small"
+        rooms = MinMaxRandomize(1, 6) + 4
     } else if (randomizedDices[0] > 8 && randomizedDices[0] < 17) {
-        size = "Medium";
-        rooms = MinMaxRandomize(4, 16) + 6;
+        size = "Medium"
+        rooms = MinMaxRandomize(4, 16) + 6
     } else if (randomizedDices[0] > 16 && randomizedDices[0] < 19) {
-        size = "Large";
-        rooms = MinMaxRandomize(5, 30) + 12;
+        size = "Large"
+        rooms = MinMaxRandomize(5, 30) + 12
     } else if (randomizedDices[0] === 19) {
-        size = "Huge";
-        rooms = MinMaxRandomize(10, 60) + 24;
+        size = "Huge"
+        rooms = MinMaxRandomize(10, 60) + 24
     } else {
-        size = "Limitless";
+        size = "Limitless"
     }
 
     if (randomizedDices[1] === 1) {
-        type = "Lair";
+        type = "Lair"
     } else if (randomizedDices[1] === 2) {
-        type = "Tomb / Crypt";
+        type = "Tomb / Crypt"
     } else if (randomizedDices[1] === 3) {
-        type = "Abandoned stronghold";
+        type = "Abandoned stronghold"
     } else if (randomizedDices[1] === 4) {
-        type = "Temple or shrine";
+        type = "Temple or shrine"
     } else if (randomizedDices[1] === 5) {
-        type = "Natural caves";
+        type = "Natural caves"
     } else if (randomizedDices[1] === 6) {
-        type = "Maze";
+        type = "Maze"
     } else if (randomizedDices[1] === 7) {
-        type = "Mine";
+        type = "Mine"
     } else if (randomizedDices[1] === 8) {
-        type = "Planar Gate";
+        type = "Planar Gate"
     } else if (randomizedDices[1] === 9) {
-        type = "Guild / cult headquarters";
+        type = "Guild / cult headquarters"
     } else {
-        type = "Death Trap";
+        type = "Death Trap"
     }
 
     if (rooms != undefined) {
-        dungeon = type + " " + size + ". " + rooms + " rooms";
+        dungeon = type + " " + size + ". " + rooms + " rooms"
     } else {
-        dungeon = type + " " + size + ".";
+        dungeon = type + " " + size + "."
     }
 
     return dungeon
