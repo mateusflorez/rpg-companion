@@ -75,10 +75,15 @@ function Generators() {
                     </div>
                 </div>
                 <div className="pt-2 w-full flex flex-col justify-center gap-2" >
-                    <h1 className="text-zinc-500">Dungeons</h1>
+                    <h1 className="text-zinc-500">Roll dice</h1>
                     <div className="">
-                        <button onClick={() => { Dungeon(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Dungeon</button>
-                        <button onClick={() => { Dungeon(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Area</button>
+                        <button onClick={() => { Dices(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D4</button>
+                        <button onClick={() => { Dices(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D6</button>
+                        <button onClick={() => { Dices(8); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D8</button>
+                        <button onClick={() => { Dices(10); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D10</button>
+                        <button onClick={() => { Dices(12); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D12</button>
+                        <button onClick={() => { Dices(20); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D20</button>
+                        <button onClick={() => { Dices(100); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D100</button>
                     </div>
                 </div>
                 <div className="pt-2 w-full flex flex-col justify-center gap-2" >
@@ -90,15 +95,10 @@ function Generators() {
                     </div>
                 </div>
                 <div className="pt-2 w-full flex flex-col justify-center gap-2" >
-                    <h1 className="text-zinc-500">Roll dice</h1>
+                    <h1 className="text-zinc-500">Dungeons</h1>
                     <div className="">
-                        <button onClick={() => { Dices(4); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D4</button>
-                        <button onClick={() => { Dices(6); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D6</button>
-                        <button onClick={() => { Dices(8); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-2 text-sm border-none cursor-pointer transition hover:bg-orange-900">D8</button>
-                        <button onClick={() => { Dices(10); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D10</button>
-                        <button onClick={() => { Dices(12); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D12</button>
-                        <button onClick={() => { Dices(20); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D20</button>
-                        <button onClick={() => { Dices(100); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">D100</button>
+                        <button onClick={() => { Dungeon(1); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Dungeon</button>
+                        <button onClick={() => { Dungeon(2); updateHistory() }} className="m-1 h-fit w-fit bg-orange-600 rounded font-semibold text-white py-1 px-1 text-sm border-none cursor-pointer transition hover:bg-orange-900">Area</button>
                     </div>
                 </div>
                 <div className="pt-2 w-full flex flex-col justify-center gap-2" >
