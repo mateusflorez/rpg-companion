@@ -1,3 +1,4 @@
+import MerchantRandomize from "./settlement/MerchantRandomize"
 import RumourRandomize from "./settlement/RumourRandomize"
 import SaveOnHistory from "./shared/SaveOnHistory"
 
@@ -9,7 +10,7 @@ function Settlement(param: number) {
             res = "🚧 WIP"
             break
         case 2:
-            res = "🚧 WIP"
+            res = MerchantRandomize()
             break
         case 3:
             res = RumourRandomize()
