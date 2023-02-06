@@ -1,0 +1,5 @@
+export const HPFIELDS = ['totalHP', 'tempHP', 'currentHP']
+export const ATTRIBUTEFIELDS = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma']
+export const ATTRIBUTESTFIELDS = ['strengthst', 'dexterityst', 'constitutionst', 'intelligencest', 'wisdomst', 'charismast']
+export const NUMBERFIELDS = ['level', 'experience', 'proficiency', 'armorClass', 'initiative', 'speed', 'passivePerception']
+export const BOOLEANFIELDS = ['inspiration']

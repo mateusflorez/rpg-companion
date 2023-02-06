@@ -7,7 +7,15 @@ import CharacterSheet from "./characters/CharacterSheet"
 import Dashboard from "./Dashboard"
 import Generators from "./Generators"
 
-function Static({ page }: { page: String }) {
+const PAGES: { [key: string]: any } = {
+    "dashboard": <Dashboard />,
+    "characters": <Characters />,
+    "characterBuilder": <CharacterBuilder />,
+    "characterSheet": <CharacterSheet />,
+    "generators": <Generators />
+}
+
+function Static({ page }: { page: string }) {
     const [pageSelected, setPageSelected] = useState<String>("dashboard")
 
     const location = useLocation()
@@ -28,11 +36,7 @@ function Static({ page }: { page: String }) {
             <Header currentPage={pageSelected} />
 
             <div className="w-[99%] flex flex-col items-center overflow-auto scrollbar">
-                {page === "dashboard" && <Dashboard />}
-                {page === "characters" && <Characters />}
-                {page === "characterBuilder" && <CharacterBuilder />}
-                {page === "characterSheet" && <CharacterSheet />}
-                {page === "generators" && <Generators />}
+                {PAGES[page]}
             </div>
 
         </div>

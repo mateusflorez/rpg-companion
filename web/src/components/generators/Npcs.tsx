@@ -18,11 +18,7 @@ function Npcs(param: number) {
             break
     }
 
-    const newHistory = SaveOnHistory(res)
-
-    return (
-        localStorage.setItem("history", JSON.stringify(newHistory))
-    )
+    return res
 }
 
 export default Npcs

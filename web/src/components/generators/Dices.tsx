@@ -9,11 +9,7 @@ function Dices(param: number) {
 
     res = randomizedDices[0]
 
-    const newHistory = SaveOnHistory(res)
-
-    return (
-        localStorage.setItem("history", JSON.stringify(newHistory))
-    )
+    return res
 }
 
 export default Dices

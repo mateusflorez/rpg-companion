@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { getCharacterRoute, updateCharacterRoute } from '../../utils/APIRoutes';
+import { HPFIELDS, ATTRIBUTEFIELDS, ATTRIBUTESTFIELDS, NUMBERFIELDS, BOOLEANFIELDS } from '../../utils/Constants';
 
 function CharacterSheet() {
     const { id } = useParams();
@@ -28,7 +29,7 @@ function CharacterSheet() {
     }, [character])
 
     async function handleChange(e: any) {
-        if (e.target.name === 'totalHP' || e.target.name === 'tempHP' || e.target.name === 'currentHP') {
+        if (HPFIELDS.includes(e.target.name)) {
             setCharacter({
                 ...character, hitPoints: {
                     ...character.hitPoints,
@@ -36,7 +37,7 @@ function CharacterSheet() {
                 }
             })
         }
-        else if (e.target.name === 'strength' || e.target.name === 'dexterity' || e.target.name === 'constitution' || e.target.name === 'intelligence' || e.target.name === 'wisdom' || e.target.name === 'charisma') {
+        else if (ATTRIBUTEFIELDS.includes(e.target.name)) {
             setCharacter({
                 ...character, attributes: {
                     ...character.attributes,
@@ -44,16 +45,16 @@ function CharacterSheet() {
                 }
             })
         }
-        else if (e.target.name === 'strengthst' || e.target.name === 'dexterityst' || e.target.name === 'constitutionst' || e.target.name === 'intelligencest' || e.target.name === 'wisdomst' || e.target.name === 'charismast') {
+        else if (ATTRIBUTESTFIELDS.includes(e.target.name)) {
             setCharacter({
                 ...character, attributes: {
                     ...character.attributes,
                     [e.target.name]: e.target.checked
                 }
             })
-        } else if (e.target.name === 'inspiration') {
+        } else if (BOOLEANFIELDS.includes(e.target.name)) {
             setCharacter({ ...character, [e.target.name]: e.target.checked })
-        } else if (e.target.name === 'level' || e.target.name === 'experience' || e.target.name === 'proficiency' || e.target.name === 'armorClass' || e.target.name === 'initiative' || e.target.name === 'speed' || e.target.name === 'passivePerception') {
+        } else if (NUMBERFIELDS.includes(e.target.name)) {
             setCharacter({ ...character, [e.target.name]: parseInt(e.target.value) })
         }
         else {
@@ -64,7 +65,6 @@ function CharacterSheet() {
     async function updateCharacter() {
         if (userString && character.id)
             await axios.put(`${updateCharacterRoute}/${(JSON.parse(userString)).id}/${character.id}`, { character })
-        console.log('bla')
     }
 
     return (

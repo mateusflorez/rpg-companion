@@ -1,5 +1,4 @@
 import Randomize from "./shared/Randomize"
-import SaveOnHistory from "./shared/SaveOnHistory"
 
 function Answer(param: number) {
     const dices = [20]
@@ -49,11 +48,9 @@ function Answer(param: number) {
         res = "Yes"
     }
 
-    const newHistory = SaveOnHistory(res)
 
-    return (
-        localStorage.setItem("history", JSON.stringify(newHistory))
-    )
+
+    return res;
 }
 
 export default Answer
